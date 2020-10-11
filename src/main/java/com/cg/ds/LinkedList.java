@@ -1,5 +1,6 @@
 package com.cg.ds;
 
+
 public class LinkedList<T> {
 	private INode<T> head;
 	private INode<T> tail;
@@ -56,6 +57,9 @@ public class LinkedList<T> {
 			currentNode = currentNode.getNext();
 		}
 
+	}
+	public void popFirst() {
+		this.head=this.head.getNext();
 	}
 
 }
