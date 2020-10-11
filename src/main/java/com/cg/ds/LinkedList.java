@@ -39,4 +39,23 @@ public class LinkedList<T> {
 		}
 	}
 
+	public void insert(INode<T> node, int pos) {
+		if (pos == 1) {
+			node.setNext(this.head);
+			this.head = node;
+		}
+		int count = 0;
+		INode<T> currentNode = this.head;
+		while (!currentNode.equals(null)) {
+			count++;
+			if (count == pos - 1) {
+				node.setNext(currentNode.getNext());
+				currentNode.setNext(node);
+				break;
+			}
+			currentNode = currentNode.getNext();
+		}
+
+	}
+
 }
