@@ -31,5 +31,12 @@ public class Node<T> implements INode<T> {
 		// TODO Auto-generated method stub
 		return this.next;
 	}
+	
+	@Override
+	public String toString() {
+		if(this.next==null)
+			return this.key+"";
+		return this.key+"->";
+	}
 
 }
