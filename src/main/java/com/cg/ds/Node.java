@@ -1,11 +1,12 @@
 package com.cg.ds;
 
-public class Node<T> implements INode<T> {
+public class Node<T extends Comparable<T>> implements INode<T> {
 	private T key;
 	private INode<T> next;
 
 	public Node(T key) {
 		this.key = key;
+		this.next=null;
 	}
 
 	@Override
@@ -47,6 +48,10 @@ public class Node<T> implements INode<T> {
 			return false;
 		INode<T> n=(INode<T>)o;
 		return this.getKey()==n.getKey();
+	}
+	@Override
+	public int compareTo(INode<T> node) {
+		return this.key.compareTo(node.getKey());
 	}
 
 }
