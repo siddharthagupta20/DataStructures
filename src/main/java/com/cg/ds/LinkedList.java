@@ -105,5 +105,8 @@ public class LinkedList<T> {
 		}
 		return false;
 	}
+	public int size() {
+		return this.length;
+	}
 
 }
