@@ -17,5 +17,17 @@ public class StackTest {
 		s.push(thirdNode);
 		assertEquals(thirdNode, s.peek());
 	}
+	@Test
+	public void whenPoppedShouldReturnSecond() {
+		Stack<Integer> s=new Stack<Integer>();
+		Node<Integer> firstNode = new Node<Integer>(50);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(40);
+		s.push(firstNode);
+		s.push(secondNode);
+		s.push(thirdNode);
+		s.pop();
+		assertEquals(secondNode, s.peek());
+	}
 
 }
