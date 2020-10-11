@@ -17,5 +17,17 @@ public class LinkedListTest {
 		list.add(thirdNode);
 		assertEquals(firstNode, list.getTail());
 	}
+	@Test
+	public void whenNodesAppendedShouldReturnFirst() {
+		LinkedList<Integer> list=new LinkedList<Integer>();
+		Node<Integer> firstNode=new Node<Integer>(50);
+		Node<Integer> secondNode=new Node<Integer>(30);
+		Node<Integer> thirdNode=new Node<Integer>(40);
+		list.append(firstNode);
+		list.append(secondNode);
+		list.append(thirdNode);
+		assertEquals(firstNode, list.getHead());
+	}
+
 
 }
