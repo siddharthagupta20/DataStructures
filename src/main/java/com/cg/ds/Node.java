@@ -38,5 +38,15 @@ public class Node<T> implements INode<T> {
 			return this.key+"";
 		return this.key+"->";
 	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean equals(Object o) {
+		if(o==this)
+			return true;
+		if(!(o instanceof INode))
+			return false;
+		INode<T> n=(INode<T>)o;
+		return this.getKey()==n.getKey();
+	}
 
 }
