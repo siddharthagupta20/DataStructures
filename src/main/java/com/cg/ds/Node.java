@@ -4,9 +4,8 @@ public class Node<T> implements INode<T> {
 	private T key;
 	private INode<T> next;
 
-	public Node(T key, INode<T> next) {
+	public Node(T key) {
 		this.key = key;
-		this.next = next;
 	}
 
 	@Override

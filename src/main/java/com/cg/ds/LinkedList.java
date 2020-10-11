@@ -8,6 +8,16 @@ public class LinkedList<T> {
 		this.head=null;
 		this.tail=null;
 	}
-
+	public void add(INode<T> node) {
+		if(this.head==null) { 
+			this.head=node;
+			this.tail=node;
+		}
+		else {
+			this.head.setNext(node);
+			this.head=node;
+		}
+			
+	}
 
 }
