@@ -1,6 +1,7 @@
 package com.cg.ds;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -68,6 +69,17 @@ public class LinkedListTest {
 		list.append(thirdNode);
 		list.popLast();
 		assertEquals(secondNode, list.getTail());
+	}
+	@Test
+	public void whenNodeSearchedLastShouldReturnTrue() {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		Node<Integer> firstNode = new Node<Integer>(50);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(40);
+		list.append(firstNode);
+		list.append(secondNode);
+		list.append(thirdNode);
+		assertTrue(list.search(secondNode));
 	}
 
 }

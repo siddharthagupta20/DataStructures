@@ -87,4 +87,23 @@ public class LinkedList<T> {
 
 	}
 
+	public boolean search(INode<T> node) {
+		INode<T> currentNode = this.head;
+		int count = 0;
+		while (!currentNode.equals(null)) {
+			count++;
+			if (currentNode.equals(node)) {
+				System.out.println("Found");
+				return true;
+			}
+			if (count == length) {
+				System.out.println("Not Found");
+				return false;
+			}
+			currentNode = currentNode.getNext();
+
+		}
+		return false;
+	}
+
 }
