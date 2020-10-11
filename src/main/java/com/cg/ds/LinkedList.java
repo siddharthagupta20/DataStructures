@@ -25,7 +25,7 @@ public class LinkedList<T> {
 			this.head = node;
 			this.tail = node;
 		} else {
-			this.head.setNext(node);
+			node.setNext(this.head);
 			this.head = node;
 		}
 
