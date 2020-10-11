@@ -28,4 +28,15 @@ public class LinkedList<T> {
 
 	}
 
+	public void append(INode<T> node) {
+		if (this.head == null) {
+			this.head = node;
+			this.tail = node;
+		} else {
+
+			this.tail.setNext(node);
+			this.tail = node;
+		}
+	}
+
 }
