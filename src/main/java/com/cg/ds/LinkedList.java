@@ -1,13 +1,14 @@
 package com.cg.ds;
 
-
 public class LinkedList<T> {
 	private INode<T> head;
 	private INode<T> tail;
+	private int length;
 
 	public LinkedList() {
 		this.head = null;
 		this.tail = null;
+		length = 0;
 	}
 
 	public INode<T> getHead() {
@@ -19,6 +20,7 @@ public class LinkedList<T> {
 	}
 
 	public void add(INode<T> node) {
+		length++;
 		if (this.head == null) {
 			this.head = node;
 			this.tail = node;
@@ -30,6 +32,7 @@ public class LinkedList<T> {
 	}
 
 	public void append(INode<T> node) {
+		length++;
 		if (this.head == null) {
 			this.head = node;
 			this.tail = node;
@@ -41,25 +44,47 @@ public class LinkedList<T> {
 	}
 
 	public void insert(INode<T> node, int pos) {
-		if (pos == 1) {
-			node.setNext(this.head);
-			this.head = node;
-		}
-		int count = 0;
+		if (pos > 0 && pos <= length) {
+			if (pos == 1) {
+				node.setNext(this.head);
+				this.head = node;
+			}
+			int count = 0;
+			INode<T> currentNode = this.head;
+			while (!currentNode.equals(null)) {
+				count++;
+				if (count == pos - 1) {
+					node.setNext(currentNode.getNext());
+					currentNode.setNext(node);
+					break;
+				}
+				currentNode = currentNode.getNext();
+			}
+			length++;
+		} else
+			System.out.println("No such position.");
+
+	}
+
+	public void popFirst() {
+		this.head = this.head.getNext();
+		length--;
+	}
+
+	public void popLast() {
 		INode<T> currentNode = this.head;
+		int count = 0;
 		while (!currentNode.equals(null)) {
 			count++;
-			if (count == pos - 1) {
-				node.setNext(currentNode.getNext());
-				currentNode.setNext(node);
+			if (count == (length - 1)) {
+				currentNode.setNext(null);
+				this.tail = currentNode;
 				break;
 			}
 			currentNode = currentNode.getNext();
 		}
+		length--;
 
-	}
-	public void popFirst() {
-		this.head=this.head.getNext();
 	}
 
 }
