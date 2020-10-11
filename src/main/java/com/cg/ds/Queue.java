@@ -12,4 +12,7 @@ public class Queue<T> {
 	public int size() {
 		return list.size();
 	}
+	public void dequeue() {
+		list.popFirst();
+	}
 }
