@@ -53,7 +53,7 @@ public class LinkedList<T> {
 			INode<T> currentNode = this.head;
 			while (!currentNode.equals(null)) {
 				count++;
-				if (count == pos - 1) {
+				if (count == pos) {
 					node.setNext(currentNode.getNext());
 					currentNode.setNext(node);
 					break;
