@@ -105,8 +105,19 @@ public class LinkedList<T> {
 		}
 		return false;
 	}
+
 	public int size() {
 		return this.length;
+	}
+
+	public void print() {
+		INode<T> currentNode = this.head;
+		int count = 0;
+		while (++count <= length) {
+			System.out.println(currentNode);
+			if (!currentNode.equals(this.tail))
+				currentNode = currentNode.getNext();
+		}
 	}
 
 }
