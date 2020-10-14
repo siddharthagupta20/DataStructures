@@ -4,7 +4,7 @@ public class Queue<T> {
 	private LinkedList<T> list;
 
 	public Queue() {
-		this.list = null;
+		this.list = new LinkedList<T>();
 	}
 	public void enqueue(INode<T> node) {
 		list.append(node);
